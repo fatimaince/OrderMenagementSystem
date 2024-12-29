@@ -28,7 +28,7 @@ public class ProductTree {
         Collections.sort(list);
         System.out.println("If the order " + list + " is cancelled:");
         removeProductsRecursive(root, list, 0);
-        printTree(); // Güncellenmiş ağacı yazdır
+        printTree(); 
     }
 
     private boolean removeProductsRecursive(TreeNode current, ArrayList<String> list, int index) {
@@ -40,10 +40,10 @@ public class ProductTree {
         TreeNode child = current.getProducts().get(product);
         boolean shouldRemove = removeProductsRecursive(child, list, index + 1);
 
-        // Eğer bu düğüm ya da alt düğümleri kaldırılması gerekiyorsa, sayaç azaltılır
+      
         child.setCountByDecreasing();
         if (child.getCount() == 0) {
-            current.getProducts().remove(product); // Sayaç sıfırsa düğümü sil
+            current.getProducts().remove(product);
         } else if (shouldRemove) {
             return current.getProducts().isEmpty();
         }
