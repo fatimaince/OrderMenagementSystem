@@ -1,7 +1,5 @@
 
 package tryingProject;
-
-
 	import java.util.*;
 	/**
 	 *
@@ -36,7 +34,7 @@ package tryingProject;
 	    }
 	  
 	    public void printTree() {
-	    printTreeMain("  ", true);  // Root node ile başla
+	    printTreeMain("  ", true);  
 	}
 
 	private void printTreeMain(String prefix, boolean isLast) {
@@ -46,7 +44,6 @@ package tryingProject;
 
 	    List<TreeNode> children = new ArrayList<>(products.values());
 	    for (int i = 0; i < children.size(); i++) {
-	        // Her bir çocuğun yazdırılması için doğru prefix ve isLast değerlerini ayarlıyoruz
 	        children.get(i).printTreeMain(prefix + (isLast ? "    " : "|  "), i == children.size() );
 	 
             }
